@@ -62,7 +62,7 @@ prompt = ChatPromptTemplate.from_template(template)
 
 # Retriever setup
 retriever = docsearch.as_retriever(search_kwargs={"k": 3})
-docs = retriever.get_relevant_documents("what did you know about Hypertensia?")
+docs = retriever.get_relevant_documents("Can you give me a summary of \"https://libstore.ugent.be/fulltxt/RUG01/003/157/601/RUG01-003157601_2024_0001_AC.pdf\"?")
 
 # Model setup
 llm_repo_id = "huggingfaceh4/zephyr-7b-alpha"
@@ -78,5 +78,5 @@ rag_chain = (
 )
 
 # Invoke RAG chain with a question
-response = rag_chain.invoke("What is hypertensia?")
+response = rag_chain.invoke("Can you give me a summary of \"https://libstore.ugent.be/fulltxt/RUG01/003/157/601/RUG01-003157601_2024_0001_AC.pdf\"?")
 print(response)
